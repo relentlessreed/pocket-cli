@@ -1,3 +1,19 @@
+/* Add your existing CSS styles above this line */
+
+/* Media query for small screens (e.g., mobile devices) */
+@media (max-width: 768px) {
+    /* Add your responsive styles for small screens here */
+    body {
+      font-size: 12px; /* Adjust the base font size for mobile devices */
+    }
+  
+    #terminal {
+      font-size: 12px; /* Adjust the terminal font size for mobile devices */
+    }
+  
+    /* Add any other required responsive styles */
+  }
+
 .filler {
     width: 0;
 }
