@@ -1,3 +1,7 @@
+.container {
+    transform: scale(0.5);
+  }
+
 /* Add your existing CSS styles above this line */
 
 /* Media query for small screens (e.g., mobile devices) */
