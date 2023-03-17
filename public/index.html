@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Linux Command Line Emulator</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+         * {
+        box-sizing: border-box;
+    }
+
+    /* Add other CSS styles here... */
+    
+    .flashing-text {
+        animation: flash 1s linear infinite;
+    }
+
+ 
+        
+        
+
+        #splash-screen {
+
+}
+
+.flashing-text {
+    display: inline-block;
+    text-align: center;
+}
+
+        #terminal {
+            padding: 10px;
+            color: lime;
+            white-space: pre-wrap;
+            font-size: 14px;
+            min-height: 100vh;
+        }
+
+        #terminal:focus {
+            outline: none;
+        }
+
+        .input-line {
+            color: white;
+        }
+    </style>
+</head>
+<body>
+  <div id="splash-screen" style="position: fixed; top: 0; left: 0; width: 100%; height: 100vh; display: flex; justify-content: center; align-items: center; background-color: black; color: lime; font-size: 14px; z-index: 1;">
+    <pre>
+          <pre style="padding: 0; margin: 0;">
+                                                       Welcome to
+
+                _______                       __                    __             ______   __        ______ 
+               /       \                     /  |                  /  |           /      \ /  |      /      |
+               $$$$$$$  |  ______    _______ $$ |   __   ______   _$$ |_         /$$$$$$  |$$ |      $$$$$$/ 
+               $$ |__$$ | /      \  /       |$$ |  /  | /      \ / $$   |        $$ |  $$/ $$ |        $$ |  
+               $$    $$/ /$$$$$$  |/$$$$$$$/ $$ |_/$$/ /$$$$$$  |$$$$$$/         $$ |      $$ |        $$ |  
+               $$$$$$$/  $$ |  $$ |$$ |      $$   $$<  $$    $$ |  $$ | __       $$ |   __ $$ |        $$ |  
+               $$ |      $$ \__$$ |$$ \_____ $$$$$$  \ $$$$$$$$/   $$ |/  |      $$ \__/  |$$ |_____  _$$ |_ 
+               $$ |      $$    $$/ $$       |$$ | $$  |$$       |  $$  $$/       $$    $$/ $$       |/ $$   |
+               $$/        $$$$$$/   $$$$$$$/ $$/   $$/  $$$$$$$/    $$$$/         $$$$$$/  $$$$$$$$/ $$$$$$/    
+
+
+              
+                                                      Now Loading:
+              <div class="progress-bar-container">
+                <div class="progress-bar">
+                    <span class="filler"></span>
+                </div>
+                <div style="display: inline-block; text-align: center;">
+                  <span class="flashing-text">   Click anywhere in the terminal to get started.</span>
+              </div>
+            </pre>
+          
+      </div>
+      
+      <div class="progress-bar-container">
+        <div class="progress-bar">
+            <span class="filler"></span>
+        </div>
+          <pre style="padding: 0; margin: 0;">
+              <!-- Add your ASCII art here -->
+              <!-- ... -->
+          </pre>
+          <div style="display: inline-block; text-align: center;">
+              <h1 class="flashing-text">Click anywhere in the terminal to get started.</h1>
+          </div>
+      </div>
+      </div><span class="flashing-text" style="display: inline-block; text-align: center;">Click anywhere in the terminal to get started.</span>
+    </pre>
+</div>
+<div id="terminal" contenteditable="true" spellcheck="false">Type your command here</div>
+</body>
+<script src="main.js"></script>
+</html>
