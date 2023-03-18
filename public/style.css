@@ -1,6 +1,27 @@
+
+#terminal {
+  padding: 10px;
+  color: lime;
+  white-space: pre-wrap;
+  font-size: 14px;
+  min-height: 100vh;
+}
+
+#terminal:focus {
+  outline: none;
+}
+
+.input-line {
+  color: white;
+}
+
 .container {
     transform: scale(0.5);
   }
+
+* {
+  box-sizing: border-box;
+}
 
 /* Add your existing CSS styles above this line */
 
@@ -28,6 +49,8 @@
 
 .flashing-text {
    animation: flash 1s linear infinite;
+   display: inline-block;
+  text-align: center;
 }
 #splash-screen {
     position: fixed;
