@@ -10,15 +10,10 @@ document.addEventListener("DOMContentLoaded", () => {
   console.log("Script loaded");
 
   function updateLoadingBar() {
-    if (Math.random() < 0.1) {
-      setTimeout(() => {
-        loading += Math.random() * 5;
-        updateLoadingBar();
-      }, 100 + Math.random() * 300);
-    } else {
-      loading += Math.random() * 3;
+    setTimeout(() => {
+      loading += Math.random() * 1;
       updateLoadingBar();
-    }
+    }, 1000 + Math.random() * 2000);
 
     if (loading >= 100) {
       clearInterval(loadingInterval);
@@ -32,7 +27,7 @@ document.addEventListener("DOMContentLoaded", () => {
     filler.textContent = "|".repeat(Math.floor(loading));
   }
 
-  const loadingInterval = setInterval(updateLoadingBar, 100);
+  const loadingInterval = setInterval(updateLoadingBar, 1000);
 
   function showTerminal() {
     terminal.style.display = "block";
