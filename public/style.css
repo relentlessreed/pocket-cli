@@ -8,8 +8,8 @@ body {
   padding: 0;
   justify-content: baseline;
 }
-@keyframes flash {
-  0%,
+/* @keyframes flash { */
+/* 0%,
   50% {
     opacity: 1;
   }
@@ -17,7 +17,7 @@ body {
   100% {
     opacity: 0;
   }
-}
+} */
 
 #terminal {
   padding: 10px;
@@ -33,19 +33,19 @@ body {
   outline: none;
 }
 
-.input-line {
+/* .input-line {
   color: white;
-}
+} */
 
-#pre {
+/* #pre {
   align-self: center;
-}
+} */
 
-.container {
+/* .container {
   transform: scale(1);
   justify-content: center;
   max-width: fit-content;
-}
+} */
 
 * {
   box-sizing: border-box;
@@ -63,9 +63,9 @@ body {
   max-width: fit-content;
 } */
 
-.bar-end {
+/* .bar-end {
   margin-right: 100%;
-}
+} */
 
 .flashing-text {
   animation: flash 1s linear infinite;
@@ -74,9 +74,8 @@ body {
 }
 
 #splash-screen {
-  align-self: center;
   position: absolute;
-  top: 0;
+  top: 100px;
   left: 0;
   width: min-content;
   height: fit-content;
@@ -84,7 +83,7 @@ body {
   max-width: fit-content;
   justify-content: center;
   align-items: center;
-  background-color: black;
+  background-color: clear;
   color: lime;
   font-size: xx-small;
   z-index: 1;
