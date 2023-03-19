@@ -3,7 +3,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const terminal = document.getElementById("terminal");
   const flashingText = document.getElementById("flashing-text");
   const nowLoadingText = document.getElementById("now-loading-text");
-  const filler = document.querySelector(".filler");
+  const filler = document.getElementById("filler");
   const barEnd = document.querySelector(".bar-end");
   const progressbar = document.getElementById("progress-bar");
   const charactersToLoad = 74;
@@ -14,54 +14,57 @@ document.addEventListener("DOMContentLoaded", () => {
   console.log("Script loaded");
   // Rest of your code...
 
-  // Function to hide the splash screen
-  const hideSplashScreen = () => {
-    splashScreen.style.display = "none";
-    splashScreen.removeEventListener("click", hideSplashScreen);
-    terminal.focus();
-  };
+  function updateLoadingBar() {
+    charactersLoaded += 1;
 
-  // Hide the splash screen when clicked
-  splashScreen.addEventListener("click", hideSplashScreen);
-
-  terminal.addEventListener("keydown", (e) => {
-    // Remove initial text when the user starts typing
-    if (!terminal.classList.contains("user-started-typing")) {
-      terminal.textContent = "";
-      terminal.classList.add("user-started-typing");
-    }
-
-    // Check for Ctrl + C key combination
-    if (e.ctrlKey && e.key === "c") {
-      e.preventDefault();
-      e.stopPropagation();
-      terminal.textContent = "";
+    // Function to hide the splash screen
+    const hideSplashScreen = () => {
+      splashScreen.style.display = "none";
+      splashScreen.removeEventListener("click", hideSplashScreen);
       terminal.focus();
-      // Move caret to the beginning
-      const range = document.createRange();
-      const selection = window.getSelection();
-      range.setStart(terminal.firstChild, 0);
-      range.collapse(true);
-      selection.removeAllRanges();
-      selection.addRange(range);
-      return;
-    }
+    };
 
-    if (e.key === "Enter") {
-      e.preventDefault();
-      const input = terminal.textContent.trim().split("\n").pop();
-      processCommand(input);
-    }
-  });
+    // Hide the splash screen when clicked
+    splashScreen.addEventListener("click", hideSplashScreen);
 
-  //   function updateLoadingBar() {
-  //     progress += 1;
+    terminal.addEventListener("keydown", (e) => {
+      // Remove initial text when the user starts typing
+      if (!terminal.classList.contains("user-started-typing")) {
+        terminal.textContent = "";
+        terminal.classList.add("user-started-typing");
+      }
 
-//   function updateProgressBar() {
-//     charactersLoaded += 1;
+      // Check for Ctrl + C key combination
+      if (e.ctrlKey && e.key === "c") {
+        e.preventDefault();
+        e.stopPropagation();
+        terminal.textContent = "";
+        terminal.focus();
+        // Move caret to the beginning
+        const range = document.createRange();
+        const selection = window.getSelection();
+        range.setStart(terminal.firstChild, 0);
+        range.collapse(true);
+        selection.removeAllRanges();
+        selection.addRange(range);
+        return;
+      }
 
-// Calculate the percentage of characters loaded
-const percentageLoaded = (charactersLoaded / charactersToLoad) * 100;
+      if (e.key === "Enter") {
+        e.preventDefault();
+        const input = terminal.textContent.trim().split("\n").pop();
+        processCommand(input);
+      }
+    });
+
+    //   function updateLoadingBar() {
+    //     progress += 1;
+
+    //   function updateProgressBar() {
+    //     charactersLoaded += 1;
+
+    // Calculate the percentage of characters loaded
+    const percentageLoaded = (charactersLoaded / charactersToLoad) * 100;
 
     if ((progress += 1)) {
       clearInterval(loadingInterval);
@@ -201,12 +204,12 @@ function updateLoadingBar() {
     return;
   }
 
- // Update the loading bar width
- loadingBar.style.width = `${percentageLoaded}%`;
+  //   // Update the loading bar width
+  //   loadingBar.style.width = `${percentageLoaded}%`;
 
-//   const barWidth = Math.floor(progress * 1); // Adjust this value to change the number of '*' characters.
-//   filler.textContent = "*".repeat(barWidth);
-//   filler.style.width = `${progress}%`;
-// }
+  //   const barWidth = Math.floor(progress * 1); // Adjust this value to change the number of '*' characters.
+  //   filler.textContent = "*".repeat(barWidth);
+  //   filler.style.width = `${progress}%`;
+}
 
 const loadingInterval = setInterval(updateLoadingBar, 100); // Adjust the 100 value to change the speed of the loading bar.

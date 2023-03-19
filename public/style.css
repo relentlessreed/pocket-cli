@@ -86,3 +86,23 @@ body {
   font-size: 8px;
   z-index: 1;
 }
+/* styles for the loading bar */
+
+.progress-bar-container {
+  position: relative;
+  width: 100%;
+}
+
+.progress-bar {
+  background-color: black;
+  width: 100%;
+  height: 1em;
+  overflow: hidden;
+}
+
+.filler {
+  display: inline-block;
+  height: 1em;
+  background-color: lime;
+  white-space: nowrap;
+}
