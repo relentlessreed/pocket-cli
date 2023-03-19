@@ -93,7 +93,7 @@ body {
 .progress-bar-container {
   position: relative;
   width: 100%;
-  border: 1px solid lime;
+  border: 1px dotted lime;
   box-sizing: border-box;
 }
 
