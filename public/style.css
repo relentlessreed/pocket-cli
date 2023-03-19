@@ -1,10 +1,32 @@
+/* Terminal */
+body {
+  max-width: fit-content;
+  font-size: 5px;
+  font-family: monospace;
+  background-color: black;
+  margin: 0;
+  padding: 0;
+  justify-content: baseline;
+}
+@keyframes flash {
+  0%,
+  50% {
+    opacity: 1;
+  }
+  50.01%,
+  100% {
+    opacity: 0;
+  }
+}
 
 #terminal {
   padding: 10px;
   color: lime;
+  max-width: fit-content;
   white-space: pre-wrap;
   font-size: 14px;
-  min-height: 100vh;
+  min-height: fit-content;
+  font-size: 12px; /* Adjust this terminal font size for mobile devices */
 }
 
 #terminal:focus {
@@ -15,64 +37,55 @@
   color: white;
 }
 
+#pre {
+  align-self: center;
+}
+
 .container {
-    transform: scale(0.5);
-  }
+  transform: scale(1);
+  justify-content: center;
+  max-width: fit-content;
+}
 
 * {
   box-sizing: border-box;
 }
 
-/* Add your existing CSS styles above this line */
+/* Add any other required responsive styles */
 
-/* Media query for small screens (e.g., mobile devices) */
-@media (max-width: 768px) {
-    /* Add your responsive styles for small screens here */
-    body {
-      font-size: 12px; /* Adjust the base font size for mobile devices */
-    }
-  
-    #terminal {
-      font-size: 12px; /* Adjust the terminal font size for mobile devices */
-    }
-  
-    /* Add any other required responsive styles */
-  }
-
-.filler {
-    width: 0;
+#now-loading {
+  position: absolute;
+  display: inline-flex;
+  text-align: center;
 }
-  
+
+/* .filler {
+  max-width: fit-content;
+} */
+
 .bar-end {
-    margin-left: 100%;
+  margin-right: 100%;
 }
 
 .flashing-text {
-   animation: flash 1s linear infinite;
-   display: inline-block;
+  animation: flash 1s linear infinite;
+  display: inline-block;
   text-align: center;
 }
+
 #splash-screen {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background-color: black;
-    color: lime;
-    font-size: 14px;
-    z-index: 1;
+  align-self: center;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: min-content;
+  height: fit-content;
+  max-height: fit-content;
+  max-width: fit-content;
+  justify-content: center;
+  align-items: center;
+  background-color: black;
+  color: lime;
+  font-size: xx-small;
+  z-index: 1;
 }
-body {
-            font-family: monospace;
-            background-color: black;
-            margin: 0;
-            padding: 0;
-        }
-           @keyframes flash {
-        0%, 50% { opacity: 1; }
-        50.01%, 100% { opacity: 0; }
-    }
