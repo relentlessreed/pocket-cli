@@ -25,6 +25,7 @@ body {
   white-space: pre-wrap;
   min-height: fit-content;
   font-size: 12px; /* Adjust this terminal font size for mobile devices */
+  outline: none;
 }
 
 /* #terminal:focus {
