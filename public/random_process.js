@@ -103,13 +103,17 @@ const processPhrases = [
   "Recompiling binaries",
 ];
 
-const usedPhrases = []; // Add this line
-
 window.getRandomProcess = function () {
+  const usedPhrases = []; // Add this line
+  //   const loadingLabel = document.getElementById("loadingLabel");
+
   if (usedPhrases.length === processPhrases.length) {
-    // All phrases have been used, reset the usedPhrases array
     usedPhrases.length = 0;
   }
+
+  //   if (loadingLabel) {
+  //     loadingLabel.innerText = getRandomProcess();
+  //   }
 
   let randomIndex;
   do {
