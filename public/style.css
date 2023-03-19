@@ -71,7 +71,7 @@ body {
 } */
 
 #splash-screen {
-  position: absolute;
+  position: relative;
   top: 100px;
   left: 0;
   margin-left: 27px;
@@ -86,8 +86,8 @@ body {
   font-size: 8px;
   z-index: 1;
 }
-/* styles for the loading bar */
 
+/* styles for the loading bar */
 .progress-bar-container {
   position: relative;
   width: 100%;
