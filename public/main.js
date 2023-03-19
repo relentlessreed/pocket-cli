@@ -32,7 +32,7 @@ document.addEventListener("DOMContentLoaded", () => {
     function showTerminal() {
       terminal.style.display = "block";
       terminal.textContent = "Type your command here";
-      terminal.classList.remove("user-started-typing");
+      terminal.classList.add("flashing-text");
     }
 
     // Function to hide the splash screen

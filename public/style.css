@@ -111,3 +111,16 @@ body {
   white-space: nowrap;
   font-size: 12px; /* Adjust the size of the pipe character */
 }
+
+.flashing-text {
+  animation: flashing 1s step-end infinite alternate;
+}
+
+@keyframes flashing-text {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
