@@ -18,6 +18,7 @@ body {
 } */
 
 #terminal {
+  display: none;
   padding: 10px;
   color: lime;
   max-width: fit-content;
@@ -26,9 +27,9 @@ body {
   font-size: 12px; /* Adjust this terminal font size for mobile devices */
 }
 
-#terminal:focus {
+/* #terminal:focus {
   outline: none;
-}
+} */
 
 /* .input-line {
   color: white;

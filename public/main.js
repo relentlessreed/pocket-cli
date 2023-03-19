@@ -17,10 +17,18 @@ document.addEventListener("DOMContentLoaded", () => {
   function updateLoadingBar() {
     charactersLoaded += 1;
 
+    // function to show the Terminal after splash screen is clicked
+    function showTerminal() {
+      terminal.style.display = "block";
+      terminal.textContent = "Type your command here";
+      terminal.classList.remove("user-started-typing");
+    }
+
     // Function to hide the splash screen
     const hideSplashScreen = () => {
       splashScreen.style.display = "none";
       splashScreen.removeEventListener("click", hideSplashScreen);
+      setTimeout(showTerminal, 500); // Adjust the timeout value as needed
       terminal.focus();
     };
 
@@ -39,7 +47,7 @@ document.addEventListener("DOMContentLoaded", () => {
         e.preventDefault();
         e.stopPropagation();
         terminal.textContent = "";
-        terminal.focus();
+        // terminal.focus();
         // Move caret to the beginning
         const range = document.createRange();
         const selection = window.getSelection();
@@ -84,8 +92,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   // Set focus to the terminal after hiding the splash screen
   splashScreen.addEventListener("transitionend", () => {
-    terminal.focus();
-
+    // terminal.focus();
     // setTimeout(() => {
     //   splashScreen.style.display = "none";
     // }, 8500);
@@ -107,7 +114,7 @@ terminal.addEventListener("keydown", (e) => {
     e.preventDefault();
     e.stopPropagation(); // Add this line
     terminal.textContent = "";
-    terminal.focus();
+    // terminal.focus();
     // Move caret to the beginning
     const range = document.createRange();
     const selection = window.getSelection();
@@ -157,7 +164,7 @@ function processCommand(input) {
       output = input.substring(input.indexOf(" ") + 1);
       break;
       terminal.textContent = "";
-      terminal.focus();
+      //   terminal.focus();
       // Move caret to the beginning
       const range = document.createRange();
       const selection = window.getSelection();
@@ -186,10 +193,10 @@ function processCommand(input) {
   }
 
   terminal.textContent += `\n${output}\n`;
-  terminal.focus();
+  //   terminal.focus();
 }
 
-terminal.focus();
+// terminal.focus();
 
 // Other functions and event listeners
 // script.js
