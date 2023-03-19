@@ -53,14 +53,19 @@
       >
       <!-- Now Loading + loading Bar -->
       <div
-        class="loading-bar-container"
-        id="percentage"
-        style="text-align: center; padding-top: 5px"
-      >
-        <div class="loading-bar">
-          <span class="filler" id="filler"></span>
-        </div>
+      class="loading-bar-container"
+      id="percentage"
+      style="text-align: center; padding-top: 5px"
+    >
+      <div id="loadingBar" style="width: 0%"class="loadingBar">
+        <span class="filler" id="filler"></span>
       </div>
+    </div>
+    <div
+      id="random-process-container"
+      style="text-align: center; padding-top: 5px"
+    >
+      <div id="random-process"id="loadingLabel"></div>
     </div>
     <!-- Click Anywhere to start (Flashing) -->
 
@@ -70,5 +75,6 @@
       >
     </div> -->
   </body>
+  <script src="random_process.js"></script>
   <script src="main.js"></script>
 </html>

@@ -9,22 +9,34 @@ document.addEventListener("DOMContentLoaded", () => {
 
   console.log("Script loaded");
 
-  function updateLoadingBar() {
-    setTimeout(() => {
-      loading += Math.random() * 1;
-      updateLoadingBar();
-    }, 1000 + Math.random() * 2000);
+  const randomProcess = document.getElementById("random-process");
 
-    if (loading >= 100) {
-      clearInterval(loadingInterval);
-      flashingText.classList.remove("hidden");
-      nowLoadingText.classList.add("hidden");
-      loadingFinished = true;
-      splashScreen.addEventListener("click", hideSplashScreen);
-      return;
+  function updateLoadingBar() {
+    const loadingBar = document.getElementById("loadingBar");
+    const loadingPercent = parseFloat(loadingBar.style.width);
+
+    let increase;
+
+    if (loadingPercent < 64) {
+      increase = 1; // Increase by 1% before 64%
+    } else {
+      increase = 5; // Increase by 5% after reaching 64%
     }
 
+    setTimeout(() => {
+      const interval = setInterval(updateLoadingBar, 1000); // Adjust the time interval if needed
+    }, 0);
+
+    const newLoadingPercent = loadingPercent + increase;
+
+    loadingBar.style.width = newLoadingPercent + "%";
+    randomProcess.innerHTML = `<span style="color: lime;">${window.getRandomProcess()}</span>`; // Update the random process text without .exe and with styling
+    document.getElementById("loadingLabel").innerText =
+      window.getRandomProcess();
+
     filler.textContent = "|".repeat(Math.floor(loading));
+    const processPhrase = getRandomProcess();
+    randomProcess.innerHTML = `<span style="color: lime;">${processPhrase}.exe</span>`; // Update the random process text with styling
   }
 
   const loadingInterval = setInterval(updateLoadingBar, 1000);

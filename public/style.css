@@ -1,21 +1,9 @@
-/* Terminal */
 body {
-  /* font-size: 5px; */
   font-family: monospace;
   background-color: black;
   margin: 0;
   padding: 0;
 }
-/* @keyframes flash { */
-/* 0%,
-  50% {
-    opacity: 1;
-  }
-  50.01%,
-  100% {
-    opacity: 0;
-  }
-} */
 
 #terminal {
   display: none;
@@ -24,53 +12,9 @@ body {
   max-width: fit-content;
   white-space: pre-wrap;
   min-height: fit-content;
-  font-size: 12px; /* Adjust this terminal font size for mobile devices */
+  font-size: 12px;
   outline: none;
 }
-
-/* #terminal:focus {
-  outline: none;
-} */
-
-/* .input-line {
-  color: white;
-} */
-
-/* #pre {
-  align-self: center;
-} */
-
-/* .container {
-  transform: scale(1);
-  justify-content: center;
-  max-width: fit-content;
-} */
-
-/* * {
-  box-sizing: border-box;
-} */
-
-/* Add any other required responsive styles */
-
-/* #now-loading { */
-/* position: absolute; */
-/* display: inline-flex; */
-/* text-align: center;
-} */
-
-/* .filler {
-  max-width: fit-content;
-} */
-
-/* .bar-end {
-  margin-right: 100%;
-} */
-
-/* .flashing-text {
-  animation: flash 1s linear infinite;
-  display: inline-block;
-  text-align: center;
-} */
 
 #splash-screen {
   position: relative;
@@ -79,17 +23,23 @@ body {
   margin-left: 27px;
   width: min-content;
   height: fit-content;
-  /* max-height: fit-content;
-  max-width: fit-content; */
-  /* justify-content: center;
-  align-items: center; */
-  background-color: clear;
   color: lime;
   font-size: 7px;
   z-index: 1;
 }
 
-/* styles for the loading bar */
+.loading-bar-process-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 5px;
+}
+
+.random-process {
+  font-size: 12px;
+  color: lime;
+}
+
 .loading-bar-container {
   position: relative;
   width: 100%;
@@ -109,11 +59,7 @@ body {
   height: 1em;
   background-color: lime;
   white-space: nowrap;
-  font-size: 12px; /* Adjust the size of the pipe character */
-}
-
-.flashing-text {
-  animation: flashing 1s step-end infinite alternate;
+  font-size: 12px;
 }
 
 @keyframes flashing-text {
@@ -123,4 +69,8 @@ body {
   100% {
     opacity: 0;
   }
+}
+
+.flashing {
+  animation: flashing-text 1s step-end infinite alternate;
 }
