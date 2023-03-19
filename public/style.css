@@ -93,6 +93,8 @@ body {
 .progress-bar-container {
   position: relative;
   width: 100%;
+  border: 1px solid lime;
+  box-sizing: border-box;
 }
 
 .progress-bar {
@@ -107,4 +109,5 @@ body {
   height: 1em;
   background-color: lime;
   white-space: nowrap;
+  font-size: 12px; /* Adjust the size of the pipe character */
 }

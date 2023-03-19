@@ -4,18 +4,29 @@ document.addEventListener("DOMContentLoaded", () => {
   const flashingText = document.getElementById("flashing-text");
   const nowLoadingText = document.getElementById("now-loading-text");
   const filler = document.getElementById("filler");
-  const barEnd = document.querySelector(".bar-end");
-  const progressbar = document.getElementById("progress-bar");
-  const charactersToLoad = 74;
-  let charactersLoaded = 0;
   let progress = 0;
   let loadingFinished = false;
+  //   const barEnd = document.querySelector(".bar-end");
+  //   const progressbar = document.getElementById("progress-bar");
+  //   const charactersToLoad = 74;
+  //   let charactersLoaded = 0;
 
   console.log("Script loaded");
-  // Rest of your code...
+
+  //   function updateLoadingBar() {
+  //     charactersLoaded += 1;
 
   function updateLoadingBar() {
-    charactersLoaded += 1;
+    // Occasionally make the loading bar stutter
+    if (Math.random() < 0.1) {
+      setTimeout(() => {
+        progress += Math.random() * 5;
+        updateProgressBar();
+      }, 100 + Math.random() * 300);
+    } else {
+      progress += Math.random() * 3;
+      updateProgressBar();
+    }
 
     // function to show the Terminal after splash screen is clicked
     function showTerminal() {
