@@ -54,14 +54,14 @@ document.addEventListener("DOMContentLoaded", () => {
   function updateLoadingBar() {
     progress += 1;
 
-    if ((progress += 1)) {
-      clearInterval(loadingInterval);
-      flashingText.classList.remove("hidden"); // Show the flashing text
-      nowLoadingText.classList.add("hidden"); // Hide the "Now Loading:" text
-      loadingFinished = true; // Set loadingFinished to true
-      splashScreen.addEventListener("click", hideSplashScreen); // Listen for click event to hide splash screen
-      return;
-    }
+    // if ((progress += 1)) {
+    //   clearInterval(loadingInterval);
+    //   flashingText.classList.remove("hidden"); // Show the flashing text
+    //   nowLoadingText.classList.add("hidden"); // Hide the "Now Loading:" text
+    //   loadingFinished = true; // Set loadingFinished to true
+    //   splashScreen.addEventListener("click", hideSplashScreen); // Listen for click event to hide splash screen
+    //   return;
+    // }
 
     const barWidth = Math.max(progress * 1); // Adjust this value to change the number of '*' characters.
     filler.textContent = "*".repeat(72);
