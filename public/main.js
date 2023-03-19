@@ -5,6 +5,9 @@ document.addEventListener("DOMContentLoaded", () => {
   const nowLoadingText = document.getElementById("now-loading-text");
   const filler = document.querySelector(".filler");
   const barEnd = document.querySelector(".bar-end");
+  const progressbar = document.getElementById("progress-bar");
+  const charactersToLoad = 74;
+  let charactersLoaded = 0;
   let progress = 0;
   let loadingFinished = false;
 
@@ -51,17 +54,23 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   });
 
-  function updateLoadingBar() {
-    progress += 1;
+  //   function updateLoadingBar() {
+  //     progress += 1;
 
-    // if ((progress += 1)) {
-    //   clearInterval(loadingInterval);
-    //   flashingText.classList.remove("hidden"); // Show the flashing text
-    //   nowLoadingText.classList.add("hidden"); // Hide the "Now Loading:" text
-    //   loadingFinished = true; // Set loadingFinished to true
-    //   splashScreen.addEventListener("click", hideSplashScreen); // Listen for click event to hide splash screen
-    //   return;
-    // }
+//   function updateProgressBar() {
+//     charactersLoaded += 1;
+
+// Calculate the percentage of characters loaded
+const percentageLoaded = (charactersLoaded / charactersToLoad) * 100;
+
+    if ((progress += 1)) {
+      clearInterval(loadingInterval);
+      flashingText.classList.remove("hidden"); // Show the flashing text
+      nowLoadingText.classList.add("hidden"); // Hide the "Now Loading:" text
+      loadingFinished = true; // Set loadingFinished to true
+      splashScreen.addEventListener("click", hideSplashScreen); // Listen for click event to hide splash screen
+      return;
+    }
 
     const barWidth = Math.max(progress * 1); // Adjust this value to change the number of '*' characters.
     filler.textContent = "*".repeat(72);
@@ -74,9 +83,9 @@ document.addEventListener("DOMContentLoaded", () => {
   splashScreen.addEventListener("transitionend", () => {
     terminal.focus();
 
-    setTimeout(() => {
-      splashScreen.style.display = "none";
-    }, 8500);
+    // setTimeout(() => {
+    //   splashScreen.style.display = "none";
+    // }, 8500);
   });
 });
 
@@ -192,9 +201,12 @@ function updateLoadingBar() {
     return;
   }
 
-  const barWidth = Math.floor(progress * 1); // Adjust this value to change the number of '*' characters.
-  filler.textContent = "*".repeat(barWidth);
-  filler.style.width = `${progress}%`;
-}
+ // Update the loading bar width
+ loadingBar.style.width = `${percentageLoaded}%`;
+
+//   const barWidth = Math.floor(progress * 1); // Adjust this value to change the number of '*' characters.
+//   filler.textContent = "*".repeat(barWidth);
+//   filler.style.width = `${progress}%`;
+// }
 
 const loadingInterval = setInterval(updateLoadingBar, 100); // Adjust the 100 value to change the speed of the loading bar.
