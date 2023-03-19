@@ -6,7 +6,7 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node server.js",
-    "heroku-prebuild": "node build_number.js"
+    "preinstall": "node build_number.js"
   },
   "engines": {
     "node": "14.x"
