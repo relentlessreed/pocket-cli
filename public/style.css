@@ -1,12 +1,10 @@
 /* Terminal */
 body {
-  max-width: fit-content;
-  font-size: 5px;
+  /* font-size: 5px; */
   font-family: monospace;
   background-color: black;
   margin: 0;
   padding: 0;
-  justify-content: baseline;
 }
 /* @keyframes flash { */
 /* 0%,
@@ -20,11 +18,10 @@ body {
 } */
 
 #terminal {
-  padding: 10px;
+  /* padding: 10px; */
   color: lime;
   max-width: fit-content;
   white-space: pre-wrap;
-  font-size: 14px;
   min-height: fit-content;
   font-size: 12px; /* Adjust this terminal font size for mobile devices */
 }
@@ -47,17 +44,17 @@ body {
   max-width: fit-content;
 } */
 
-* {
+/* * {
   box-sizing: border-box;
-}
+} */
 
 /* Add any other required responsive styles */
 
-#now-loading {
-  position: absolute;
-  display: inline-flex;
-  text-align: center;
-}
+/* #now-loading { */
+/* position: absolute; */
+/* display: inline-flex; */
+/* text-align: center;
+} */
 
 /* .filler {
   max-width: fit-content;
@@ -67,24 +64,25 @@ body {
   margin-right: 100%;
 } */
 
-.flashing-text {
+/* .flashing-text {
   animation: flash 1s linear infinite;
   display: inline-block;
   text-align: center;
-}
+} */
 
 #splash-screen {
   position: absolute;
   top: 100px;
   left: 0;
+  margin-left: 27px;
   width: min-content;
   height: fit-content;
-  max-height: fit-content;
-  max-width: fit-content;
-  justify-content: center;
-  align-items: center;
+  /* max-height: fit-content;
+  max-width: fit-content; */
+  /* justify-content: center;
+  align-items: center; */
   background-color: clear;
   color: lime;
-  font-size: xx-small;
+  font-size: 8px;
   z-index: 1;
 }
