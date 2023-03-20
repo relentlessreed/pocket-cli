@@ -2,6 +2,8 @@ const express = require("express");
 const app = express();
 const path = require("path");
 const fs = require("fs");
+const version = process.env.VERSION;
+console.log("Version:", version);
 
 app.use(express.static(path.join(__dirname, "public")));
 

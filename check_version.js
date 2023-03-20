@@ -2,13 +2,21 @@ const axios = require("axios");
 const { exec } = require("child_process");
 const packageJson = require("./package.json");
 
-const localVersion = packageJson.version;
-
 const getAppVersion = (url) => {
   return axios
     .get(url + "/version")
     .then((response) => response.data.version)
     .catch((error) => console.error("Error fetching version from", url, error));
+};
+
+const getHerokuVersion = async () => {
+  try {
+    const response = await axios.get('https://pocket-cli.herokuapp.com/version');
+    return response.data.version;
+  } catch (error) {
+    console.error('Error fetching version from Heroku:', error);
+    throw error;
+  }
 };
 
 const getGitVersion = () => {
@@ -26,7 +34,8 @@ const getGitVersion = () => {
 };
 
 (async () => {
-  const herokuVersion = await getAppVersion("https://pocket-cli.herokuapp.com");
+  const localVersion = packageJson.version;
+  const herokuVersion = await getHerokuVersion();
   const gitVersion = await getGitVersion();
 
   console.log("Local version:", localVersion);
