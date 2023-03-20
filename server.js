@@ -35,8 +35,9 @@ app.get("/increment-version", (req, res) => {
         res.status(500).send("Error updating package.json");
         return;
       }
-
-      console.log("Updated version:", updatedVersion);
+      // the console will log the updated version number in the format "Released v46 (updatedVersion)" right before the Heroku deployment link.
+      console.log("Released v" + updatedVersion + " (updatedVersion)");
+      console.log("https://pocket-cli.herokuapp.com/ deployed to Heroku");
       res.send("Version incremented successfully");
     });
   });
@@ -58,3 +59,4 @@ app.listen(PORT, () => {
 // and may allow unauthorized users to increment the version 
 // number. It is recommended to use a more secure and robust
 // solution for production applications.
+
