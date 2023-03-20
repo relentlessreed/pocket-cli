@@ -20,6 +20,12 @@ app.get("/increment-version", (req, res) => {
     }
 
     const packageJson = JSON.parse(data);
+
+    // version is the first parameter inside our function
+    app.get("/version", (req, res) => {
+      res.json({ version: packageJson.version });
+    });
+
     const currentVersion = packageJson.version.split(".");
     const updatedVersion = [
       currentVersion[0],
