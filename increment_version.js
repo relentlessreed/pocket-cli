@@ -9,7 +9,14 @@ fs.readFile(packageJsonPath, "utf8", (err, data) => {
     process.exit(1);
   }
 
-  const packageJson = JSON.parse(data);
+  let packageJson;
+  try {
+    packageJson = JSON.parse(data);
+  } catch (e) {
+    console.error("Error parsing package.json:", e);
+    process.exit(1);
+  }
+
   const currentVersion = packageJson.version.split(".");
   const updatedVersion = [
     currentVersion[0],
