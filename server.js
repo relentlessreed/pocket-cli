@@ -2,6 +2,7 @@ const express = require("express");
 const app = express();
 const path = require("path");
 const fs = require("fs");
+
 const version = process.env.VERSION;
 console.log("Version:", version);
 
@@ -22,7 +23,7 @@ fs.readFile(packageJsonPath, "utf8", (err, data) => {
   packageJson = JSON.parse(data);
 
   app.get("/version", (req, res) => {
-    res.json({ version: packageJson.version });
+    res.json({ packageJson: version });
   });
 });
 
