@@ -10,14 +10,14 @@ const getAppVersion = (url) => {
 };
 
 const getHerokuVersion = async () => {
-  try {
-    const response = await axios.get('https://pocket-cli.herokuapp.com/version');
-    return response.data.version;
-  } catch (error) {
-    console.error('Error fetching version from Heroku:', error);
-    throw error;
-  }
-};
+    try {
+      const response = await axios.get('https://pocket-cli.herokuapp.com/version');
+      return response.data.version;
+    } catch (error) {
+      console.error('Error fetching version from Heroku:', error.message);
+      throw error;
+    }
+  };
 
 const getGitVersion = () => {
   return new Promise((resolve, reject) => {

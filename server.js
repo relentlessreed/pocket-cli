@@ -2,8 +2,9 @@ const express = require("express");
 const app = express();
 const path = require("path");
 const fs = require("fs");
-
 const version = process.env.VERSION;
+// Remove the following line
+// const packageJson = require('./package.json');
 console.log("Version:", version);
 
 app.use(express.static(path.join(__dirname, "public")));
