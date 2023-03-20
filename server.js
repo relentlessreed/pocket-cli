@@ -17,7 +17,8 @@ const packageJsonPath = path.join(__dirname, "package.json");
 const packageJson = JSON.parse(fs.readFileSync(packageJsonPath, "utf-8"));
 
 app.get("/version", (req, res) => {
-  res.json({ version: packageJson.version });
+  const appVersion = process.env.VERSION || packageJson.version;
+  res.json({ version: appVersion });
 });
 
 app.get("/increment-version", (req, res) => {
